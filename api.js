@@ -1,5 +1,5 @@
-//Won't work on the latest versions
-// of Chrome or Firefox
+// Won't work on Chrome or Firefox
+// Opera works fine for me
 
 var currentLatitude , currentLongitude, api, lat, lon, key, apiRequest, weatherData;
 
@@ -8,10 +8,9 @@ lat = "?lat=";
 lon = "&lon=";
 key = "&appid=560c314416cee6b04950e1f5415da8c5";
 apiRequest = [];
-//weatherData container 
 weatherData = {
 
-	// to convert the Kelvins
+	// to convert the Kelvin to other units
 	weatherConvert: function(value){
 				if(value.toLowerCase() === "kelvin"){
 					currentTemp = Math.floor(this.currentTemp);
@@ -54,18 +53,15 @@ weatherData = {
 	}    
 };
 
-
-//check if the navigator api is available
 if (navigator.geolocation) {
-
-	// if so, get the position fo the user
 	navigator.geolocation.getCurrentPosition(function(position) {
 
 		// store the latitude and the longitude values
 		currentLatitude = Math.floor(position.coords.latitude);
 		currentLongitude = Math.floor(position.coords.longitude);
-		apiRequest.push(api,lat,currentLatitude,lon,currentLongitude,key);
+		
 		//form the request
+		apiRequest.push(api,lat,currentLatitude,lon,currentLongitude,key);
 		apiRequest = apiRequest.join("");
 
 		// send the coords and recieve the weather from the api
@@ -81,7 +77,7 @@ if (navigator.geolocation) {
 			weatherData.miscData.minTemp = json.main.temp_min;
 			weatherData.miscData.maxTemp = json.main.temp_max;
 			// post the raw weather data on the screen for testing
-			$(".message").html(weatherData.weatherConvert("celsius"));
+			$(".message").html(weatherData.currentTemp);
 		});
 	});
 }
