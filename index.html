@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Weather now!</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
-	<div class="container">
-		<header class="header">
-			<h1 class="welcome"></h1>
-		</header>
-		<div class="splash">
-			<div class="temperature">
-			<h1 class="desc panel panel-primary"></h1>
-			<h1 class="temp">f</h1>
-			</div>
-			<div class="weather-icon">
-				<div class="ellipse"></div>
-				<h3 class="temp-desc"></h3>
-			</div>
-		</div>
-		<div class="units-change">
-				<a class="unit btn btn-default" id="celsius">&deg;C</a>
-				<a class="unit btn btn-default" id="fahrenheit">&deg;F</a>
-				<a class="unit btn btn-default" id="kelvin">&deg;K</a>
-		</div>
-	</div>
-	<script src="js/jquery-2.2.4.min.js"></script>
-	<script src="js/api.js"></script>
-	<!-- <script src="js/apiTemp.js"></script> -->
-</body>
-</html>
+  <div class="container">
+    <header class="header">
+      <h1 class="welcome"></h1>
+    </header>
+    <div class="splash">
+      <div class="temperature">
+        <h1 class="desc panel panel-primary"></h1>
+        <h1 class="temp">Loading...</h1>
+      </div>
+      <div class="weather-icon">
+        <div class="ellipse"></div>
+        <h3 class="temp-desc"></h3>
+      </div>
+    </div>
+    <div class="units-change">
+      <a class="unit btn btn-default" id="celsius">&deg;C</a>
+      <a class="unit btn btn-default" id="fahrenheit">&deg;F</a>
+    </div>
+  </div>
